@@ -1,0 +1,4 @@
+{
+    "name": "myjubot",
+    "addons": ["rediscloud"]
+}
