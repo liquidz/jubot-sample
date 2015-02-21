@@ -4,12 +4,12 @@
     [jubot.test :refer :all]
     [clojure.test :refer :all]))
 
-(deftest test-ping-handler
+(deftest ping-handler-test
   (are [x y] (= x (ping-handler y))
     nil    {}
     "pong" {:text "ping"}))
 
-(deftest test-brain-handler
+(deftest brain-handler-test
   (with-test-brain
     (are [x y] (= x (brain-handler y))
       nil   {}
