@@ -1,4 +1,7 @@
 (ns myjubot.core
+  "===================================
+   YOU DO NOT NEED TO MODIFY THIS FILE
+   ==================================="
   (:require
     [jubot.core :refer [jubot]]))
 

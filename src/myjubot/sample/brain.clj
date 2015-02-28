@@ -1,13 +1,7 @@
-(ns myjubot.sample
+(ns myjubot.sample.brain
   (:require
-    [jubot.handler   :as handler]
-    [jubot.brain     :as brain]))
-
-(defn ping-handler
-  "jubot ping - reply with 'pong'"
-  [{text :text}]
-  (if (= text "ping") "pong"))
-
+    [jubot.handler :as handler]
+    [jubot.brain   :as brain]))
 
 (def ^{:doc (str "jubot set <key> <value> - store value to brain\n"
                  "jubot get <key> - restore value from brain")}
