@@ -4,5 +4,5 @@
 
 (defn your-first-handler
   "Welcome to jubot!"
-  [{text :text}]
-  (if (= text "foo") "bar"))
+  [{:keys [text message-for-me?]}]
+  (if (and message-for-me? (= text "foo")) "bar"))

@@ -3,7 +3,18 @@
 ### apply template files
 ROOT=$(git config --get ghq.root)
 DEST="$ROOT/github.com/liquidz/jubot-template/resources/leiningen/new/jubot"
-TARGET=("LICENSE" "Procfile" "README.md" "src/myjubot/core.clj" "src/myjubot/edit_me.clj" "src/myjubot/sample/pingpong.clj" "src/myjubot/sample/brain.clj" "test/myjubot/sample/pingpong_test.clj" "test/myjubot/sample/brain_test.clj" "test/myjubot/edit_me_test.clj" "project.clj" "dev/user.clj")
+TARGET=("LICENSE" "Procfile" "README.md" \
+    "src/myjubot/core.clj" \
+    "src/myjubot/edit_me.clj" \
+    "src/myjubot/sample/brain.clj" \
+    "src/myjubot/sample/hear.cljg" \
+    "src/myjubot/sample/pingpong.clj" \
+    "test/myjubot/edit_me_test.clj" \
+    "test/myjubot/sample/brain_test.clj" \
+    "test/myjubot/sample/hear_test.clj" \
+    "test/myjubot/sample/pingpong_test.clj" \
+    "project.clj" \
+    "dev/user.clj")
 
 for FILE_PATH in ${TARGET[@]}; do
     BASE_NAME=$(basename $FILE_PATH)
