@@ -1,13 +1,14 @@
 #!/bin/bash
 
 ### apply template files
-ROOT=$(git config --get ghq.root)
+ROOT="$HOME/src"
 DEST="$ROOT/github.com/liquidz/jubot-template/resources/leiningen/new/jubot"
 TARGET=("LICENSE" "Procfile" "README.md" \
     "src/myjubot/core.clj" \
     "src/myjubot/edit_me.clj" \
     "src/myjubot/sample/brain.clj" \
-    "src/myjubot/sample/hear.cljg" \
+    "src/myjubot/sample/hear.clj" \
+    "src/myjubot/sample/another_bot.clj" \
     "src/myjubot/sample/pingpong.clj" \
     "test/myjubot/edit_me_test.clj" \
     "test/myjubot/sample/brain_test.clj" \
@@ -22,7 +23,7 @@ for FILE_PATH in ${TARGET[@]}; do
         | grep -v "DELME" \
         | sed 's/MYJUBOT/{{sanitized}}/g' \
         | sed 's/myjubot/{{name}}/g' \
-        > "$DEST/$BASE_NAME"
+        > $DEST/$BASE_NAME
 done
 
 ### update project version
