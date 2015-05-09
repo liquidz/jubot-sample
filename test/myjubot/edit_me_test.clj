@@ -6,5 +6,5 @@
 
 (deftest test-your-first-handler
   (are [x y] (= x (your-first-handler y))
-    nil    {}
-    "bar" {:text "foo"}))
+    nil   {}
+    "bar" {:message-for-me? true :text "foo"}))

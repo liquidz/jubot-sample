@@ -6,7 +6,8 @@
 
 (deftest test-brain-handler
   (with-test-brain
-    (are [x y] (= x (brain-handler y))
+    (are [x y] (= x (brain-handler
+                      (merge {:message-for-me? true} y)))
       nil   {}
       "OK"  {:text "set foo bar"}
       "bar" {:text "get foo"}
