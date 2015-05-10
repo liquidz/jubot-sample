@@ -11,4 +11,5 @@
       nil   {}
       "OK"  {:text "set foo bar"}
       "bar" {:text "get foo"}
-      nil   {:text "get bar"})))
+      nil   {:text "get bar"}
+      "foo" {:text "keys"})))

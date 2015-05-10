@@ -1,7 +1,8 @@
 (ns myjubot.sample.brain
   (:require
-    [jubot.handler :as handler]
-    [jubot.brain   :as brain]))
+    [clojure.string :as str]
+    [jubot.handler  :as handler]
+    [jubot.brain    :as brain]))
 
 (defn brain-handler
   "jubot set <key> <value> - store value to brain
@@ -9,4 +10,5 @@
   [{:keys [message-for-me?] :as arg}]
   (handler/regexp arg
     #"^set (.+?) (.+?)$" (fn [{[_ k v] :match}] (brain/set k v) "OK")
-    #"^get (.+?)$"       (fn [{[_ k]   :match}] (brain/get k))))
+    #"^get (.+?)$"       (fn [{[_ k]   :match}] (brain/get k))
+    #"^keys$"            (fn [& _] (str/join "," (brain/keys)))))
